@@ -39,8 +39,11 @@ class PagesController extends Controller
     }
 
     public function mensajes(Request $request){
-
-    	return $request->all();
-
+        /*Validar si tiene nombre  con el metodo has*/
+    	if($request->has('nombre'))
+    	{
+    		return "Si tiene nombre";
+    	}
+    	return "No tiene nombre";                             
     }
 }
