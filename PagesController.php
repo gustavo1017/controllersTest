@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Http\Requests\CreateMessageRequest;
 class PagesController extends Controller
 {
     //
@@ -38,12 +39,8 @@ class PagesController extends Controller
 
     }
 
-    public function mensajes(Request $request){
-        /*Validar si tiene nombre  con el metodo has*/
-    	if($request->has('nombre'))
-    	{
-    		return "Si tiene nombre";
-    	}
-    	return "No tiene nombre";                             
+    public function mensajes(CreateMessageRequest $request){
+       	
+       return $request->all();                            
     }
 }
